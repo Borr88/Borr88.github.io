@@ -114,7 +114,13 @@
     background:radial-gradient(circle at 35% 25%, #1b2742, var(--bg-1));
     border:1px solid var(--line);
   }
-  .avatar-circle img{width:100%; height:100%; object-fit:cover; object-position:50% 30%;}
+  .avatar-circle img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 30%;
+    transition:opacity .5s ease;
+  }
+  .avatar-circle img.avatar-alt{opacity:0;}
+  .avatar-circle:hover img.avatar-base{opacity:0;}
+  .avatar-circle:hover img.avatar-alt{opacity:1;}
   .avatar-tag{
     position:absolute; bottom:-6px; right:6%; background:var(--bg-2); border:1px solid var(--line);
     border-radius:20px; padding:6px 14px; font-family:var(--mono); font-size:12px; color:var(--cyan);
@@ -230,7 +236,7 @@
       <li><a href="#experience">experience</a></li>
       <li><a href="#contact">contact</a></li>
     </ul>
-    <a class="nav-cv" href="assets/cv.pdf" target="_blank" rel="noopener" download>cv.pdf</a>
+    <a class="nav-cv" href="assets/cv.pdf" target="_blank" rel="noopener" download>cv.pdf ↓</a>
   </nav>
 </header>
 
@@ -248,7 +254,8 @@
     <div class="avatar-frame">
       <div class="avatar-ring"></div>
       <div class="avatar-circle">
-        <img src="assets/avatar.jpeg" alt="Logo personal de Boris Baldominos">
+        <img class="avatar-base" src="assets/avatar.jpeg" alt="Logo personal de Boris Baldominos">
+        <img class="avatar-alt" src="assets/avatar2.png" alt="Logo personal de Boris Baldominos (variante)">
       </div>
       <div class="avatar-tag"><span class="pulse"></span> disponible</div>
     </div>
